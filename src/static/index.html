@@ -12,32 +12,85 @@
       <h2>Extracurricular Activities</h2>
     </header>
 
+    <section id="user-info" class="hidden">
+      <div id="user-card" class="activity-card"></div>
+    </section>
+
     <main>
-      <section id="activities-container">
+      <section id="auth-container">
+        <h3>Member Access</h3>
+        <div id="auth-message" class="message hidden"></div>
+
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" required placeholder="admin@mergington.edu" />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" required placeholder="Enter your password" />
+          </div>
+          <button type="submit">Log In</button>
+        </form>
+
+        <form id="register-form" class="hidden">
+          <div class="form-group">
+            <label for="register-email">Email:</label>
+            <input type="email" id="register-email" required placeholder="your-email@mergington.edu" />
+          </div>
+          <div class="form-group">
+            <label for="register-password">Password:</label>
+            <input type="password" id="register-password" required placeholder="Choose a password" />
+          </div>
+          <button type="submit">Register</button>
+        </form>
+
+        <button id="toggle-auth-mode">Switch to Register</button>
+        <button id="logout-button" class="hidden">Log Out</button>
+      </section>
+
+      <section id="activities-container" class="hidden">
         <h3>Available Activities</h3>
         <div id="activities-list">
-          <!-- Activities will be loaded here -->
           <p>Loading activities...</p>
         </div>
       </section>
 
-      <section id="signup-container">
+      <section id="signup-container" class="hidden">
         <h3>Sign Up for an Activity</h3>
         <form id="signup-form">
-          <div class="form-group">
-            <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
-          </div>
           <div class="form-group">
             <label for="activity">Select Activity:</label>
             <select id="activity" required>
               <option value="">-- Select an activity --</option>
-              <!-- Activity options will be loaded here -->
             </select>
           </div>
           <button type="submit">Sign Up</button>
         </form>
-        <div id="message" class="hidden"></div>
+        <div id="message" class="message hidden"></div>
+      </section>
+
+      <section id="admin-container" class="hidden">
+        <h3>Admin Activity Management</h3>
+        <form id="admin-activity-form">
+          <div class="form-group">
+            <label for="admin-name">Activity Name:</label>
+            <input type="text" id="admin-name" required placeholder="Robotics Club" />
+          </div>
+          <div class="form-group">
+            <label for="admin-description">Description:</label>
+            <input type="text" id="admin-description" required placeholder="Build and program robots" />
+          </div>
+          <div class="form-group">
+            <label for="admin-schedule">Schedule:</label>
+            <input type="text" id="admin-schedule" required placeholder="Mondays, 4-5 PM" />
+          </div>
+          <div class="form-group">
+            <label for="admin-max">Max Participants:</label>
+            <input type="number" id="admin-max" required min="1" value="20" />
+          </div>
+          <button type="submit">Create Activity</button>
+        </form>
       </section>
     </main>
 
